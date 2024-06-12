@@ -1,0 +1,134 @@
+/***************************************************
+                    *   Index     *
+****************************************************/
+
+
+@media only screen and (max-width: 768px) {
+    
+    .product,
+    .popular,
+    .about,
+    .blog section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .new-product img,
+    .most-img img,
+    .about img {
+        width: 100%;
+    }
+
+    .blog section {
+        width: 100%;
+    }
+
+    #hero img {
+        display: none;
+    }
+
+    .hero_call {
+        display: none;
+    }
+
+
+    .main-nav {
+        display: none; /* Inicialmente esconder o menu */
+        /* Centralizar itens na coluna */
+    }
+
+    .show {
+        display: block;
+    }
+
+    .main-nav ul  {
+        display:block;
+        align-items: center;
+        flex-direction:column; /* Exibir como uma coluna */
+        align-items: center; 
+    }
+
+    .main-nav li a {
+        display:column; /* Exibir os links em linha */
+    }
+
+    .main-nav li {
+        display: block;
+        margin-bottom: 10px; /* Espaçamento entre itens do menu */
+    }
+
+
+   #menu {
+    display: block;
+   }
+}  
+
+
+/***************************************************
+                *   Blog    *
+****************************************************/
+@media screen and (max-width: 768px) {
+    .blog-content {
+        flex-direction: column; /* Empilhar os artigos verticalmente */
+        align-items: center; /* Centralizar os artigos */
+    }
+
+    .blog-post {
+        width: 80%; /* Largura ajustável para telas menores */
+    }
+}
+
+/* Ajuste para telas ainda menores */
+@media screen and (max-width: 576px) {
+    .blog-post {
+        width: 100%; /* Artigos ocupam toda a largura disponível */
+    }
+
+    .blog-header h1 {
+        font-size: 2rem; /* Reduzir o tamanho do título */
+    }
+
+    .blog-header p {
+        font-size: 1rem; /* Reduzir o tamanho do texto de descrição */
+    }
+
+    .read-more {
+        font-size: 0.9em; /* Reduzir o tamanho do botão */
+    }
+}
+
+/* Redimensionamento de imagens */
+.blog-post img {
+    max-width: 100%; /* Garantir que as imagens se ajustem à largura do contêiner */
+}
+
+
+/***************************************************
+             *   Contact Us    *
+****************************************************/
+
+
+@media screen and (max-width: 768px) {
+    .contact-form {
+        width: 80%; /* Reduz a largura do formulário */
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.9rem; /* Reduz o tamanho do texto do formulário */
+    }
+}
+
+/* Ajuste para telas ainda menores */
+@media screen and (max-width: 576px) {
+    .contact-form {
+        width: 90%; /* Reduz ainda mais a largura do formulário */
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho do texto do formulário */
+    }
+}

@@ -1,0 +1,69 @@
+/***************************************************
+                    *   Catalog Page     *
+****************************************************/
+.catalog-page {
+    padding: 20px;
+}
+
+.catalog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.catalog-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: 'Outfit';
+}
+
+.catalog-header p {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.catalog-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.catalog-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.catalog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.catalog-item h2 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.catalog-item p {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.catalog-item .buy-now {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.catalog-item .buy-now:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
