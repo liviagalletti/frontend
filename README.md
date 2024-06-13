@@ -1,4 +1,4 @@
-# Skincar Store
+# Skincare Store
 
 Skincar Store is an e-commerce website project focused on skincare products. This repository contains the HTML, CSS, and image files needed to build the website.
 
@@ -18,4 +18,4 @@ Each page has a similar structure, including a header, body, and footer, ensurin
 
 The project uses HTML, CSS, and JavaScript for the structure, styling, and interactivity of the site. Additionally, it incorporates the Font Awesome library for icons and utilizes Google Fonts for additional font styles.
 
-##Link to the project [Link text](URL)
+##Link to the project [Link text](https://liviagalletti.github.io/frontend/)
