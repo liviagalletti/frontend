@@ -84,6 +84,9 @@ img {
     opacity: 0.8;
 }
 
+.logo i{
+    color: #000;
+}
 
 .hero_call h3 {
     font-size: 1.5em;
