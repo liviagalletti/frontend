@@ -15,3 +15,10 @@ Developed using HTML, CSS, and JavaScript, this project utilizes the OpenWeather
 
 ## [Click here to see](https://liviagalletti.github.io/frontend/weatherApp/index.html)
 
+Website Project 
+
+The Scooter Rental Website Project is a fictional website designed for scooter rental services, built using HTML, CSS, and JavaScript to offer an engaging user experience. It includes features such as real-time weather updates retrieved from an API for current conditions and forecasts, and a dynamic pricing page that fetches data from a JSON file to display various pricing options. This project highlights the integration of APIs to deliver timely information to users, demonstrating effective use of JSON files for managing dynamic content.
+
+(O projeto do Website de Aluguel de Scooters é um site fictício projetado para serviços de aluguel de scooters, construído utilizando HTML, CSS e JavaScript para oferecer uma experiência de usuário envolvente. Ele inclui recursos como atualizações em tempo real do clima obtidas de uma API para condições atuais e previsões, e uma página de preços dinâmica que busca dados de um arquivo JSON para exibir diversas opções de preços. Este projeto destaca a integração de APIs para fornecer informações atualizadas aos usuários de forma oportuna, demonstrando o uso eficaz de arquivos JSON para gerenciar conteúdo dinâmico.)
+
+## [Click here to see](https://liviagalletti.github.io/wdd230/Scoots/index.html)
