@@ -1,6 +1,15 @@
 # Frontend 
-The Skincare Store project is an e-commerce website focusing on skincare products, comprising HTML, CSS, and image files necessary for site construction. It features three primary pages: a Contact Page enabling user messages via a form, a Catalog Page showcasing various skincare products, and a Blog Page offering skincare tips. Each page maintains a consistent layout with headers, bodies, and footers to ensure a uniform user experience. Technologies include HTML, CSS, and JavaScript for site structure, styling, and interactivity, alongside Font Awesome for icons and Google Fonts for diverse typography options.
+The Skincare Store Project
+An e-commerce site focusing on skincare products, built with HTML, CSS, and images. Features include a Contact Page for user messages, a Catalog Page showcasing products, and a Blog Page with skincare tips. Consistent layouts across all pages ensure a seamless user experience. Technologies include HTML, CSS, JavaScript for structure and interactivity, Font Awesome for icons, and Google Fonts for typography.
 
-(O projeto Skincare Store é um site de comércio eletrônico focado em produtos de cuidados com a pele, composto por arquivos HTML, CSS e imagens necessários para a construção do site. Ele possui três páginas principais: uma Página de Contato que permite aos usuários enviar mensagens através de um formulário, uma Página de Catálogo que exibe diversos produtos de skincare disponíveis para compra, e uma Página de Blog que oferece dicas relacionadas a cuidados com a pele. Cada página mantém um layout consistente com cabeçalhos, corpos e rodapés para garantir uma experiência de usuário uniforme. As tecnologias incluem HTML, CSS e JavaScript para estrutura do site, estilização e interatividade, juntamente com Font Awesome para ícones e Google Fonts para opções diversas de tipografia.)
+(Um site de e-commerce focado em produtos de cuidados com a pele, desenvolvido com HTML, CSS e imagens. Inclui três páginas principais: Contato para mensagens via formulário, Catálogo exibindo produtos de skincare, e Blog com dicas de cuidados. Layout consistente em todas as páginas para uma experiência de usuário uniforme. Tecnologias utilizadas: HTML, CSS, JavaScript para estrutura, estilo e interatividade; Font Awesome para ícones e Google Fonts para tipografia.)
 
 ## [Click here to see](https://liviagalletti.github.io/frontend/)
+
+Weather Forecast Project
+Developed using HTML, CSS, and JavaScript, this project utilizes the OpenWeatherMap API to provide real-time weather information. Users can search for weather data by entering a city name, receiving updates on temperature, humidity, and wind speed, accompanied by icons representing current weather conditions.
+
+(Desenvolvido com HTML, CSS e JavaScript, este projeto utiliza a API do OpenWeatherMap para fornecer informações meteorológicas em tempo real. Os usuários podem buscar dados climáticos digitando o nome de uma cidade, obtendo atualizações sobre temperatura, umidade e velocidade do vento, acompanhadas de ícones representativos das condições climáticas.)
+
+## [Click here to see](https://liviagalletti.github.io/frontend/weatherApp/index.html)
+
