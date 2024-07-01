@@ -8,7 +8,7 @@
 .container{
     width: 100%;
     height: 100vh;
-    background: url(images/background.jpeg);
+    background: url(images/background.webp);
     background-position: center;
     background-size: cover;
     padding: 0 7%;
@@ -23,7 +23,7 @@ nav{
 }
 
 .logo{
-    width:50px;
+    width:60px;
     cursor: pointer;
 }
 
@@ -59,7 +59,7 @@ nav .btn{
 }
 
 .content h1 span{
-    color: blanchedalmond;
+    color: #f09c4e;
 }
 
 .content p {
@@ -70,7 +70,7 @@ nav .btn{
 .content .btn {
     display: inline-block;
     margin-top: 30px;
-    background:orange;
+    background:#f09c4e;
     color: #fff;
     text-decoration: none;
     padding: 15px 30px;
@@ -79,7 +79,7 @@ nav .btn{
 
 .coint-list {
     position: absolute;
-    right: 10%;
+    right: 60%;
     bottom: 50px;
     display: flex;
     align-items: center;
@@ -99,4 +99,40 @@ nav .btn{
 .coin img {
     width: 40px;
     margin-right: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 850px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .content .btn {
+        display: block;
+    }
+
+    .coint-list {
+        display: block;
+        right: 35%;
+    }
+
+    .coin {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
 }
