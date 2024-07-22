@@ -45,3 +45,20 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadSearchedPokemons();
+});
+
+function loadSearchedPokemons() {
+    const searchedPokemons = JSON.parse(localStorage.getItem('searchedPokemons')) || [];
+    const pokemonList = document.querySelector('.pokemon-list');
+    pokemonList.innerHTML = ''; // Limpa a lista atual
+
+    searchedPokemons.forEach(pokemon => {
+        const pokemonItem = document.createElement('li');
+        pokemonItem.classList.add('pokemon'); // Use uma classe padrão para exibição
+        pokemonItem.innerHTML = convertPokemonToLi(pokemon);
+        pokemonList.appendChild(pokemonItem);
+    });
+}

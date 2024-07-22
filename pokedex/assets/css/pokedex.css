@@ -191,6 +191,21 @@
    font-size: 24px;
 }
 
+.found-pokemon {
+    text-align: center;
+    font-size: 2em; /* Aumenta o tamanho do texto */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height:20vh; /* Altura total da viewport para centralizar verticalmente */
+}
+
+.found-pokemon img {
+    max-width: 200px; /* Tamanho máximo da imagem */
+    height: auto;
+}
+
+
 
 @media screen and (min-width: 380px) {
     .pokemons {

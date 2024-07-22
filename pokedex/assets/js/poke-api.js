@@ -34,27 +34,67 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((pokemonsDetails) => pokemonsDetails)
 }
 
-function searchPokemons () {
+function searchPokemons() {
     const searchInput = document.querySelector('.search input');
     const pokemonName = searchInput.value.toLowerCase();
 
-    if(!pokemonName) return;
+    if (!pokemonName) return;
+
+    const pokemonList = document.querySelector('.pokemon-list');
+    if (!pokemonList) {
+        console.error('Element with class "pokemon-list" not found.');
+        return;
+    }
 
     pokeApi.getPokemons(0, 151) // Busca todos os Pokémon para comparação
-    .then((pokemons) => {
-        const foundPokemon = pokemons.find(pokemon => pokemon.name.toLowerCase() === pokemonName);
-        pokemonList.innerHTML = ''; // Limpa a lista atual
+        .then((pokemons) => {
+            const foundPokemon = pokemons.find(pokemon => pokemon.name.toLowerCase() === pokemonName);
+            pokemonList.innerHTML = ''; // Limpa a lista atual
 
-        if (foundPokemon) {
-            pokemonList.innerHTML = convertPokemonToLi(foundPokemon); // Adiciona o Pokémon encontrado
-        } else {
-            pokemonList.innerHTML = `<li class="pokemon">Pokémon não encontrado</li>`; // Mensagem de erro
-        }
-    });
+            if (foundPokemon) {
+                const pokemonItem = document.createElement('li');
+                pokemonItem.classList.add('found-pokemon');
+                pokemonItem.innerHTML = convertPokemonToLi(foundPokemon); // Adiciona o Pokémon encontrado
+                pokemonList.appendChild(pokemonItem);
 
-searchInput.value = ''; // Limpa o campo de busca
+                // Salva o Pokémon encontrado no Local Storage
+                savePokemonToLocalStorage(foundPokemon);
+            } else {
+                const notFoundItem = document.createElement('li');
+                notFoundItem.classList.add('pokemon');
+                notFoundItem.textContent = 'Pokémon not found';
+                pokemonList.appendChild(notFoundItem);
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching pokemons:', error);
+        });
+
+    searchInput.value = ''; // Limpa o campo de busca
 }
 
+function savePokemonToLocalStorage(pokemon) {
+    let searchedPokemons = JSON.parse(localStorage.getItem('searchedPokemons')) || [];
+    searchedPokemons.push(pokemon);
+    localStorage.setItem('searchedPokemons', JSON.stringify(searchedPokemons));
+}
+
+function loadSearchedPokemons() {
+    const searchedPokemons = JSON.parse(localStorage.getItem('searchedPokemons')) || [];
+    const pokemonList = document.querySelector('.pokemon-list');
+    pokemonList.innerHTML = ''; // Limpa a lista atual
+
+    searchedPokemons.forEach(pokemon => {
+        const pokemonItem = document.createElement('li');
+        pokemonItem.classList.add('pokemon'); // Use uma classe padrão para exibição
+        pokemonItem.innerHTML = convertPokemonToLi(pokemon);
+        pokemonList.appendChild(pokemonItem);
+    });
+}
+
+function showSearchedPokemons() {
+    loadSearchedPokemons(); // Recarrega os Pokémon pesquisados
+}
 // Adiciona eventos ao botão e ao campo de entrada
 loadMoreButton.addEventListener('click', () => {
     offset += limit;
