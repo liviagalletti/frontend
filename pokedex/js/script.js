@@ -5,9 +5,9 @@ const searchInput = document.getElementById('search');
 const pokemonContainer = document.getElementById('pokemon-container');
 
 let offset = 0;
-const limit = 20;
+const limit = 3;
 
-// Função para buscar dados do Pokémon
+// Get Pokémon Api
 async function getPokemonData(pokemon, isSearchResult = false) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -18,17 +18,14 @@ async function getPokemonData(pokemon, isSearchResult = false) {
     }
 }
 
-// Função para capitalizar a primeira letra de uma string
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// Função para exibir o Pokémon
+// Display Pokémon
 function displayPokemon(pokemon, isSearchResult = false) {
     const pokemonElement = document.createElement('div');
     const types = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
-
-    // Capitalizar a primeira letra do nome do Pokémon
     const capitalizedPokemonName = capitalizeFirstLetter(pokemon.name);
 
     pokemonElement.classList.add(types.split(', ')[0]);
@@ -43,14 +40,13 @@ function displayPokemon(pokemon, isSearchResult = false) {
     `;
     
     if (isSearchResult) {
-        // Adiciona ao topo do container
         pokemonContainer.insertBefore(pokemonElement, pokemonContainer.firstChild);
     } else {
         pokemonContainer.appendChild(pokemonElement);
     }
 }
 
-// Função para buscar e salvar a pesquisa
+// Search and Save 
 searchBtn.addEventListener('click', () => {
     const pokemonName = searchInput.value.toLowerCase();
     if (pokemonName && !document.getElementById(pokemonName)) {
@@ -61,7 +57,7 @@ searchBtn.addEventListener('click', () => {
     }
 });
 
-// Função para salvar a pesquisa no localStorage
+// Save into localStorage
 function saveSearch(pokemon) {
     let savedSearches = JSON.parse(localStorage.getItem('pokedexSearches')) || [];
     if (!savedSearches.includes(pokemon)) {
@@ -70,13 +66,13 @@ function saveSearch(pokemon) {
     }
 }
 
-// Função para carregar pesquisas salvas
+// Load saved search
 function loadSavedSearches() {
     const savedSearches = JSON.parse(localStorage.getItem('pokedexSearches')) || [];
     savedSearches.forEach(pokemon => getPokemonData(pokemon));
 }
 
-// Função para limpar pesquisas salvas
+// Clear search 
 clearBtn.addEventListener('click', () => {
     localStorage.removeItem('pokedexSearches');
     pokemonContainer.innerHTML = '';
@@ -84,14 +80,14 @@ clearBtn.addEventListener('click', () => {
     loadInitialPokemons();
 });
 
-// Função para carregar Pokémons iniciais
+// Load First Pokémons 
 function loadInitialPokemons() {
     for (let i = 1; i <= limit; i++) {
         getPokemonData(i);
     }
 }
 
-// Função para carregar mais Pokémons
+// Load More Pokemons
 loadMoreBtn.addEventListener('click', () => {
     offset += limit;
     for (let i = offset + 1; i <= offset + limit; i++) {
