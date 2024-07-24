@@ -5,15 +5,12 @@ const searchInput = document.getElementById('search');
 const pokemonContainer = document.getElementById('pokemon-container');
 
 let offset = 0;
-const limit = 3; // Ajuste o limite conforme necessário
+const limit = 20;
 
 // Função para buscar dados do Pokémon
 async function getPokemonData(pokemon, isSearchResult = false) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
         const data = await response.json();
         displayPokemon(data, isSearchResult);
     } catch (error) {
@@ -21,29 +18,28 @@ async function getPokemonData(pokemon, isSearchResult = false) {
     }
 }
 
+// Função para capitalizar a primeira letra de uma string
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // Função para exibir o Pokémon
 function displayPokemon(pokemon, isSearchResult = false) {
-    if (!pokemon || !pokemon.name || !pokemon.sprites || !pokemon.types) {
-        console.error('Invalid Pokémon data:', pokemon);
-        return;
-    }
-
     const pokemonElement = document.createElement('div');
-    const types = pokemon.types.map(typeInfo => typeInfo.type.name);
-    
-    // Adiciona a classe CSS correspondente ao primeiro tipo
-    if (types.length > 0) {
-        pokemonElement.classList.add(types[0]);
-    }
-    
+    const types = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
+
+    // Capitalizar a primeira letra do nome do Pokémon
+    const capitalizedPokemonName = capitalizeFirstLetter(pokemon.name);
+
+    pokemonElement.classList.add(types.split(', ')[0]);
     pokemonElement.classList.add('pokemon');
     pokemonElement.id = pokemon.name;
     pokemonElement.innerHTML = `
-        <h2>${pokemon.name}</h2>
+        <h2>${capitalizedPokemonName}</h2>
         <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
         <p>Height: ${pokemon.height}</p>
         <p>Weight: ${pokemon.weight}</p>
-        <p>Type: ${types.join(', ')}</p> <!-- Adiciona os tipos -->
+        <p>Type: ${types}</p>
     `;
     
     if (isSearchResult) {
@@ -100,6 +96,16 @@ loadMoreBtn.addEventListener('click', () => {
     offset += limit;
     for (let i = offset + 1; i <= offset + limit; i++) {
         getPokemonData(i);
+    }
+});
+
+// Adiciona um evento de rolagem
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    // Detecta rolagem para cima e faz a página rolar para o topo se estiver suficientemente perto
+    if (scrollTop < 100) { // Ajuste o valor conforme necessário
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
 
