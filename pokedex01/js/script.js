@@ -5,7 +5,7 @@ const searchInput = document.getElementById('search');
 const pokemonContainer = document.getElementById('pokemon-container');
 
 let offset = 0;
-const limit = 20; // Ajuste o limite conforme necessário
+const limit = 3; // Ajuste o limite conforme necessário
 
 // Função para buscar dados do Pokémon
 async function getPokemonData(pokemon, isSearchResult = false) {
@@ -100,16 +100,6 @@ loadMoreBtn.addEventListener('click', () => {
     offset += limit;
     for (let i = offset + 1; i <= offset + limit; i++) {
         getPokemonData(i);
-    }
-});
-
-// Adiciona um evento de rolagem
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    // Detecta rolagem para cima e faz a página rolar para o topo se estiver suficientemente perto
-    if (scrollTop < 100) { // Ajuste o valor conforme necessário
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
 
