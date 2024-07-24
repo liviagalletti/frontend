@@ -99,15 +99,7 @@ loadMoreBtn.addEventListener('click', () => {
     }
 });
 
-// Adiciona um evento de rolagem
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Detecta rolagem para cima e faz a página rolar para o topo se estiver suficientemente perto
-    if (scrollTop < 100) { // Ajuste o valor conforme necessário
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-});
 
 // Chame as funções quando a página for carregada
 window.addEventListener('load', () => {
